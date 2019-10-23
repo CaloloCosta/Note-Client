@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Notice</title>
+    
+</head>
+<body class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">NoticeBoard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="seeNotice.html">See Notice</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            <div class="display">
+                    <div class="img">
+                            <img src="style/logo.png" alt="">
+                            <div class="circle"></div>
+                      </div>
+                      <div class="form">
+                        <h1 class="green">Create a new notice</h1>
+                        <form id="noticeForm" method="POST">
+                                <div class="form-group">
+                                  <label class="green" for="topic">Topic</label>
+                                  <input id="topic" type="text" class="form-control"  placeholder="Enter The notice topic">
+                                </div>
+                                <div class="form-group">
+                                        <label class="green" for="description">Description</label>
+                                        <textarea class="form-control" name="" id="description" cols="30" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                        <label class="green" for="date">Date</label>
+                                        <input id="date" type="date" class="form-control">
+                                        
+                                </div>
+                                <button type="submit" class="btn btn-primary" >Submit</button>
+                        </form>
+                      </div>
+<!-- 
+                      {"id": 1, 
+                      "topic": "server", 
+                      "description": "Ballerina server", 
+                      "day": 5, 
+                      "week": 2, 
+                      "month": 1,
+                      "submissionDate": "13/10/2019"
+                      } -->
+            </div>
+
+
+            <script src="js/request.js"></script>
+           
+</body>
+</html>

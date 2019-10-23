@@ -1,0 +1,77 @@
+html{
+    font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
+}
+
+nav{
+    background: #3d474f;
+    color: #b2bbbd;
+}
+
+nav a{
+    color: #b2bbbd;
+}
+nav a:hover{
+    color: #ffffff;
+}
+
+.navbar-brand{
+    color: #83f7af;
+    font-weight: bolder;
+}
+
+.display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   
+}
+
+.img {
+    margin: 10px;
+    padding: 10px;
+    padding-top: 40px;
+}
+.circle{
+    width: 300px;
+    height: 300px;
+
+    background:#384047;
+    border-radius: 300px;
+    position: relative;
+    bottom: 180px;
+    z-index: -1;
+}
+.circle::after{
+    content: "";
+    width: 350px;
+    height: 350px;
+    background: #384047;
+    border-radius: 300px;
+    position: absolute;
+    top: -130px;
+    left: -200px;
+}
+.form{
+    background: #384047;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.display-notice{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.card{
+    margin-bottom: 10px;
+}
+/* utilities */
+.green{
+    color: #83f7af;
+}
+
+/* headers 0*/
+h1,h2,h3,h4,h5{
+    color: #384047;
+}

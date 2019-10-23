@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/request.js"></script>
+    <title>Notice</title>
+</head>
+<body class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">NoticeBoard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">See Notice</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <script>
+                request.getAll(`http://localhost:4000/?query={Notices{id,topic,description,submissionDate,day,week,month}}`);
+              </script>
+            <form id="filterForm" method="POST">
+                <div class="form-group">
+                  <label class="green" for="filter">Filter By id: </label>
+                  <select class="form-control" name="filer" id="opitons">
+                    
+                  </select>
+                </div>
+                <button type="submit">Filter</button>
+          </form>
+          <script>
+            document.getElementById('filterForm').addEventListener('submit', e => {
+              e.preventDefault();
+              let id = document.getElementById('filterForm').elements.filer.value;
+              console.log(id);
+              request.getById(`http://localhost:4000/?query={Notice(id: ${id}){id,topic,description,submissionDate,day,week,month}}`);
+})
+          </script>
+            <div class="display-notice" id="notices">                 
+                                      
+            </div>
+           
+</body>
+</html>
